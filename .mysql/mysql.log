@@ -1,0 +1,22 @@
+2025-12-10T16:10:46.737783Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-12-10T16:10:46.976304Z 0 [System] [MY-010116] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld (mysqld 8.4.7) starting as process 202094
+2025-12-10T16:10:46.991857Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-12-10T16:10:47.063928Z 1 [ERROR] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 11
+2025-12-10T16:10:56.915261Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-12-10T16:10:59.917341Z 0 [ERROR] [MY-011292] [Server] Plugin mysqlx reported: 'Preparation of I/O interfaces failed, X Protocol won't be accessible'
+2025-12-10T16:10:59.917501Z 0 [ERROR] [MY-011300] [Server] Plugin mysqlx reported: 'Setup of socket: '/run/mysqld/mysqlx.sock' failed, can't create lock file /run/mysqld/mysqlx.sock.lock'
+2025-12-10T16:11:00.882777Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-12-10T16:11:00.882812Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-12-10T16:11:01.203324Z 0 [System] [MY-010931] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: ready for connections. Version: '8.4.7'  socket: '/home/nissya/cours/a3/php/tp3/.mysql/mysql.sock'  port: 0  Source distribution.
+2025-12-10T16:20:47.452855Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.4.7).
+2025-12-10T16:20:48.761213Z 0 [System] [MY-010910] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: Shutdown complete (mysqld 8.4.7)  Source distribution.
+2025-12-10T16:20:48.761299Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2025-12-10T16:20:50.757287Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-12-10T16:20:50.952096Z 0 [System] [MY-010116] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld (mysqld 8.4.7) starting as process 210192
+2025-12-10T16:20:50.972409Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-12-10T16:20:59.440370Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-12-10T16:21:03.953516Z 0 [ERROR] [MY-011300] [Server] Plugin mysqlx reported: 'Setup of socket: '/run/mysqld/mysqlx.sock' failed, can't create lock file /run/mysqld/mysqlx.sock.lock'
+2025-12-10T16:21:05.392218Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-12-10T16:21:05.392257Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-12-10T16:21:05.671382Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2025-12-10T16:21:05.671482Z 0 [System] [MY-010931] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: ready for connections. Version: '8.4.7'  socket: '/home/nissya/cours/a3/php/tp3/.mysql/mysql.sock'  port: 3306  Source distribution.

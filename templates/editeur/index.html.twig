@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editeur index
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="d-flex justify-content-between align-items-center mb-4" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+			<h1>🏢 Editeur Index</h1>
+			<a href="{{ path('app_editeur_new') }}" class="btn btn-primary">
+				+ Créer un nouveau
+			</a>
+		</div>
+
+		<div class="card">
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nom</th>
+							<th>Pays</th>
+							<th>Site Web</th>
+							<th>Description</th>
+							<th>Created At</th>
+							<th>Updated At</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for editeur in editeurs %}
+							<tr>
+								<td>{{ editeur.id }}</td>
+								<td style="font-weight: 600;">{{ editeur.nom }}</td>
+								<td>{{ editeur.pays }}</td>
+								<td>
+									{% if editeur.siteWeb %}
+										<a href="{{ editeur.siteWeb }}" target="_blank" style="color: var(--primary); text-decoration: none;">Lien ↗</a>
+									{% endif %}
+								</td>
+								<td>{{ editeur.description }}</td>
+								<td style="font-size: 0.875rem; color: var(--text-muted);">{{ editeur.createdAt ? editeur.createdAt|date('d/m/Y H:i') : '' }}</td>
+								<td style="font-size: 0.875rem; color: var(--text-muted);">{{ editeur.updatedAt ? editeur.updatedAt|date('d/m/Y H:i') : '' }}</td>
+								<td>
+									<a href="{{ path('app_editeur_show', {'id': editeur.id}) }}" class="btn btn-show btn-sm">Voir</a>
+									<a href="{{ path('app_editeur_edit', {'id': editeur.id}) }}" class="btn btn-edit btn-sm">Modifier</a>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="8" style="text-align:center; padding: 2rem; color: #6b7280;">
+									No editors found.
+									<a href="{{ path('app_editeur_new') }}" style="color: var(--primary);">Create one?</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New JeuVideo
+{% endblock %}
+
+{% block body %}
+	<div class="container" style="max-width: 800px;">
+		<div class="d-flex justify-content-between align-items-center mb-4" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+			<h1>Create New JeuVideo</h1>
+			<a href="{{ path('app_jeu_video_index') }}" class="btn btn-show">← Retour à la liste</a>
+		</div>
+
+		<div class="card" style="padding: 2rem;">
+			{{ include('jeu_video/_form.html.twig') }}
+		</div>
+	</div>
+{% endblock %}

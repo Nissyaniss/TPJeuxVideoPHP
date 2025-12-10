@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}JeuVideo
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="d-flex justify-content-between align-items-center mb-4" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+			<h1>🎮 JeuVideo Details</h1>
+			<a href="{{ path('app_jeu_video_index') }}" class="btn btn-show">
+				← Retour à la liste
+			</a>
+		</div>
+
+		<div class="card" style="padding: 2rem;">
+			<table class="table">
+				<tbody>
+					<tr>
+						<th style="width: 200px;">Id</th>
+						<td>{{ jeu_video.id }}</td>
+					</tr>
+					<tr>
+						<th>Titre</th>
+						<td>{{ jeu_video.titre }}</td>
+					</tr>
+					<tr>
+						<th>Developpeur</th>
+						<td>{{ jeu_video.developpeur }}</td>
+					</tr>
+					<tr>
+						<th>Date Sortie</th>
+						<td>{{ jeu_video.dateSortie ? jeu_video.dateSortie|date('d/m/Y') : '-' }}</td>
+					</tr>
+					<tr>
+						<th>Prix</th>
+						<td>{{ jeu_video.prix }}
+							€</td>
+					</tr>
+					<tr>
+						<th>Description</th>
+						<td>{{ jeu_video.description }}</td>
+					</tr>
+					<tr>
+						<th>Image</th>
+						<td>
+							{% if jeu_video.imageUrl %}
+								{% if jeu_video.imageUrl starts with 'http' %}
+									<img src="{{ jeu_video.imageUrl }}" alt="{{ jeu_video.titre }}" style="max-width: 300px; border-radius: 8px;">
+								{% else %}
+									<img src="{{ asset(jeu_video.imageUrl) }}" alt="{{ jeu_video.titre }}" style="max-width: 300px; border-radius: 8px;">
+								{% endif %}
+							{% else %}
+								No image
+							{% endif %}
+						</td>
+					</tr>
+					<tr>
+						<th>Créé le</th>
+						<td>{{ jeu_video.createdAt ? jeu_video.createdAt|date('d/m/Y H:i') : '' }}</td>
+					</tr>
+					<tr>
+						<th>Mis à jour le</th>
+						<td>{{ jeu_video.updatedAt ? jeu_video.updatedAt|date('d/m/Y H:i') : '' }}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div style="margin-top: 2rem; display: flex; gap: 1rem;">
+				<a href="{{ path('app_jeu_video_edit', {'id': jeu_video.id}) }}" class="btn btn-primary">Modifier</a>
+				{{ include('jeu_video/_delete_form.html.twig') }}
+			</div>
+		</div>
+	</div>
+{% endblock %}
