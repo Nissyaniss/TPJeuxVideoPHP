@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Collection de
+	{{ utilisateur.pseudo }}
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<div class="d-flex align-items-center mb-4">
+			{% if utilisateur.imageProfil %}
+				<img src="{{ utilisateur.imageProfil }}" alt="{{ utilisateur.pseudo }}" class="rounded-circle me-3" width="80" height="80">
+			{% endif %}
+			<div>
+				<h1>Collection de
+					{{ utilisateur.pseudo }}</h1>
+				<p class="text-muted mb-0">{{ utilisateur.prenom }}
+					{{ utilisateur.nom }}
+					({{ utilisateur.collections|length }}
+					jeux)</p>
+			</div>
+			<div class="ms-auto">
+				<a href="{{ path('app_utilisateur_index') }}" class="btn btn-secondary">Retour à la liste</a>
+				<a href="{{ path('app_collect_new', {'id': utilisateur.id}) }}" class="btn btn-success">
+					<i class="bi bi-plus-circle"></i>
+					Ajouter un jeu
+				</a>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-hover align-middle">
+						<thead class="table-light">
+							<tr>
+								<th>Jeu</th>
+								<th>Statut</th>
+								<th>Prix Achat</th>
+								<th>Date Achat</th>
+								<th>Commentaire</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for collect in utilisateur.collections %}
+								<tr>
+									<td>
+										<div class="d-flex align-items-center">
+											{% if collect.jeuvideo.imageUrl %}
+												<img src="{{ collect.jeuvideo.imageUrl }}" alt="{{ collect.jeuvideo.titre }}" class="rounded me-2" width="50">
+											{% endif %}
+											<div>
+												<strong>{{ collect.jeuvideo.titre }}</strong><br>
+												<small class="text-muted">{{ collect.jeuvideo.genre }}</small>
+											</div>
+										</div>
+									</td>
+									<td>
+										<span class="badge
+																								                                        {% if collect.statut.name == 'POSSEDE' %}bg-success
+																								                                        {% elseif collect.statut.name == 'SOUHAITE' %}bg-info
+																								                                        {% elseif collect.statut.name == 'EN_COURS' %}bg-primary
+																								                                        {% elseif collect.statut.name == 'TERMINE' %}bg-warning text-dark
+																								                                        {% elseif collect.statut.name == 'ABANDONNE' %}bg-danger
+																								                                        {% else %}bg-secondary{% endif %}">
+											{{ collect.statut.label }}
+										</span>
+									</td>
+									<td>
+										{% if collect.prixAchat %}
+											{{ collect.prixAchat }}
+											€
+										{% else %}
+											-
+										{% endif %}
+									</td>
+									<td>
+										{% if collect.dateAchat %}
+											{{ collect.dateAchat|date('d/m/Y') }}
+										{% else %}
+											-
+										{% endif %}
+									</td>
+									<td>
+										{% set comment = collect.commentaire|default('-') %}
+										{{ comment|length > 50 ? comment|slice(0, 50) ~ '...' : comment }}
+									</td>
+									<td>
+										<div class="btn-group">
+											<a href="{{ path('app_collect_edit', {'id': collect.id}) }}" class="btn btn-sm btn-outline-primary">Modifier</a>
+											<form method="post" action="{{ path('app_collect_delete', {'id': collect.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce jeu de la collection ?');" style="display: inline-block;">
+												<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ collect.id) }}">
+												<button class="btn btn-sm btn-outline-danger">Supprimer</button>
+											</form>
+										</div>
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="6" class="text-center py-4">
+										<p class="text-muted">Aucun jeu dans cette collection pour le moment.</p>
+										<a href="{{ path('app_collect_new', {'id': utilisateur.id}) }}" class="btn btn-primary">Commencer la collection</a>
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

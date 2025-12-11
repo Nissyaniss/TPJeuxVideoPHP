@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un jeu
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<h1>Ajouter un jeu à la collection de
+			{{ utilisateur.pseudo }}</h1>
+
+		{{ include('collect/_form.html.twig') }}
+
+		<a href="{{ path('app_utilisateur_show', {'id': utilisateur.id}) }}" class="btn btn-link mt-3">Retour à la collection</a>
+	</div>
+{% endblock %}

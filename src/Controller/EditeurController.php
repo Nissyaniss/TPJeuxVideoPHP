@@ -11,10 +11,19 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+use Psr\Log\LoggerInterface;
+
 #[Route('/editeur')]
-final class EditeurController extends AbstractController
+class EditeurController extends AbstractController
 {
-    #[Route(name: 'app_editeur_index', methods: ['GET'])]
+    private LoggerInterface $logger;
+
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    #[Route('/', name: 'app_editeur_index', methods: ['GET'])]
     public function index(EditeurRepository $editeurRepository): Response
     {
         return $this->render('editeur/index.html.twig', [
@@ -71,7 +80,7 @@ final class EditeurController extends AbstractController
     #[Route('/{id}', name: 'app_editeur_delete', methods: ['POST'])]
     public function delete(Request $request, Editeur $editeur, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$editeur->getId(), $request->getPayload()->getString('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $editeur->getId(), $request->getPayload()->getString('_token'))) {
             $entityManager->remove($editeur);
             $entityManager->flush();
         }

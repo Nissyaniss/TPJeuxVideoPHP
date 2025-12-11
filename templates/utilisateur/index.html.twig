@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateurs
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<h1 class="mb-4">Liste des Utilisateurs</h1>
+
+		<div class="table-responsive">
+			<table class="table table-hover table-striped">
+				<thead class="table-dark">
+					<tr>
+						<th>Id</th>
+						<th>Avatar</th>
+						<th>Pseudo</th>
+						<th>Nom Complet</th>
+						<th>Email</th>
+						<th>Nb Jeux</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for utilisateur in utilisateurs %}
+						<tr>
+							<td>{{ utilisateur.id }}</td>
+							<td>
+								{% if utilisateur.imageProfil %}
+									<img src="{{ utilisateur.imageProfil }}" alt="{{ utilisateur.pseudo }}" class="rounded-circle" width="40" height="40">
+								{% else %}
+									<div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center text-white" style="width: 40px; height: 40px;">
+										{{ utilisateur.prenom|first }}{{ utilisateur.nom|first }}
+									</div>
+								{% endif %}
+							</td>
+							<td>{{ utilisateur.pseudo }}</td>
+							<td>{{ utilisateur.prenom }}
+								{{ utilisateur.nom }}</td>
+							<td>{{ utilisateur.mail }}</td>
+							<td>{{ utilisateur.collections|length }}</td>
+							<td>
+								<a href="{{ path('app_utilisateur_show', {'id': utilisateur.id}) }}" class="btn btn-sm btn-primary">
+									Voir Collection
+								</a>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="7" class="text-center">Aucun utilisateur trouvé</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

@@ -1,22 +1,81 @@
-2025-12-10T16:10:46.737783Z 0 [System] [MY-015015] [Server] MySQL Server - start.
-2025-12-10T16:10:46.976304Z 0 [System] [MY-010116] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld (mysqld 8.4.7) starting as process 202094
-2025-12-10T16:10:46.991857Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-2025-12-10T16:10:47.063928Z 1 [ERROR] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 11
-2025-12-10T16:10:56.915261Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-2025-12-10T16:10:59.917341Z 0 [ERROR] [MY-011292] [Server] Plugin mysqlx reported: 'Preparation of I/O interfaces failed, X Protocol won't be accessible'
-2025-12-10T16:10:59.917501Z 0 [ERROR] [MY-011300] [Server] Plugin mysqlx reported: 'Setup of socket: '/run/mysqld/mysqlx.sock' failed, can't create lock file /run/mysqld/mysqlx.sock.lock'
-2025-12-10T16:11:00.882777Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
-2025-12-10T16:11:00.882812Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
-2025-12-10T16:11:01.203324Z 0 [System] [MY-010931] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: ready for connections. Version: '8.4.7'  socket: '/home/nissya/cours/a3/php/tp3/.mysql/mysql.sock'  port: 0  Source distribution.
-2025-12-10T16:20:47.452855Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.4.7).
-2025-12-10T16:20:48.761213Z 0 [System] [MY-010910] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: Shutdown complete (mysqld 8.4.7)  Source distribution.
-2025-12-10T16:20:48.761299Z 0 [System] [MY-015016] [Server] MySQL Server - end.
-2025-12-10T16:20:50.757287Z 0 [System] [MY-015015] [Server] MySQL Server - start.
-2025-12-10T16:20:50.952096Z 0 [System] [MY-010116] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld (mysqld 8.4.7) starting as process 210192
-2025-12-10T16:20:50.972409Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-2025-12-10T16:20:59.440370Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-2025-12-10T16:21:03.953516Z 0 [ERROR] [MY-011300] [Server] Plugin mysqlx reported: 'Setup of socket: '/run/mysqld/mysqlx.sock' failed, can't create lock file /run/mysqld/mysqlx.sock.lock'
-2025-12-10T16:21:05.392218Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
-2025-12-10T16:21:05.392257Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
-2025-12-10T16:21:05.671382Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
-2025-12-10T16:21:05.671482Z 0 [System] [MY-010931] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: ready for connections. Version: '8.4.7'  socket: '/home/nissya/cours/a3/php/tp3/.mysql/mysql.sock'  port: 3306  Source distribution.
+2025-12-11T09:55:23.041210Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-12-11T09:55:23.243909Z 0 [System] [MY-010116] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld (mysqld 8.4.7) starting as process 37705
+2025-12-11T09:55:23.545250Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-12-11T09:55:23.794712Z 1 [ERROR] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 11
+2025-12-11T09:55:24.848701Z 1 [ERROR] [MY-012574] [InnoDB] Unable to lock ./#ib_16384_0.dblwr error: 11
+2025-12-11T09:55:25.314348Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-12-11T09:55:25.498861Z 0 [System] [MY-010116] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld (mysqld 8.4.7) starting as process 37778
+2025-12-11T09:55:25.528171Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-12-11T09:55:25.576253Z 1 [ERROR] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 11
+2025-12-11T09:55:26.619670Z 1 [ERROR] [MY-012574] [InnoDB] Unable to lock ./#ib_16384_0.dblwr error: 11
+2025-12-11T09:55:27.620011Z 1 [ERROR] [MY-012574] [InnoDB] Unable to lock ./#ib_16384_0.dblwr error: 11
+2025-12-11T09:55:27.751243Z 1 [ERROR] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 11
+2025-12-11T09:55:27.751289Z 1 [ERROR] [MY-013183] [InnoDB] Assertion failure: fil0fil.cc:7792 thread 140569251292864
+InnoDB: We intentionally generate a memory trap.
+InnoDB: Submit a detailed bug report to http://bugs.mysql.com.
+InnoDB: If you get repeated assertion failures or crashes, even
+InnoDB: immediately after the mysqld startup, there may be
+InnoDB: corruption in the InnoDB tablespace. Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/8.4/en/forcing-innodb-recovery.html
+InnoDB: about forcing recovery.
+2025-12-11T09:55:27Z UTC - mysqld got signal 6 ;
+Most likely, you have hit a bug, but this error can also be caused by malfunctioning hardware.
+BuildID[sha1]=b3f5ce9da3d7055d7ac247cd53a38f64f0beafb7
+Thread pointer: 0x55bc314b6850
+Attempting backtrace. You can use the following information to find out
+where mysqld died. If you see no messages after this, something went
+terribly wrong...
+stack_bottom = 7fd8d44a1b70 thread_stack 0x100000
+ #0 0x55bc174d44e8 _ZL18print_fatal_signaliP9siginfo_t
+ #1 0x55bc174d4a96 _Z15my_server_abortv
+ #2 0x55bc18bc6e39 _Z8my_abortv
+ #3 0x55bc18ed31f3 _Z23ut_dbg_assertion_failedPKcS0_m
+ #4 0x55bc190c75a2 _ZN9Fil_shard5do_ioERK9IORequestbRK9page_id_tRK11page_size_tmmPvS9_
+ #5 0x55bc190c7e7f _Z6fil_ioRK9IORequestbRK9page_id_tRK11page_size_tmmPvS8_
+ #6 0x55bc18fabb9f _Z17buf_read_page_lowP7dberr_tbmmRK9page_id_tRK11page_size_tb
+ #7 0x55bc18fabfe3 _Z13buf_read_pageRK9page_id_tRK11page_size_t
+ #8 0x55bc18f4a98b _ZN9Buf_fetchI16Buf_fetch_normalE9read_pageEv
+ #9 0x55bc18f57f17 _ZN16Buf_fetch_normal3getERP11buf_block_t
+ #10 0x55bc18f57fc0 _ZN9Buf_fetchI16Buf_fetch_normalE11single_pageEv
+ #11 0x55bc18f5ba91 _Z16buf_page_get_genRK9page_id_tRK11page_size_tmP11buf_block_t10Page_fetchN2ut8LocationEP5mtr_tb
+ #12 0x55bc18f5f3bc _ZN12Double_write3getEP5mtr_t
+ #13 0x55bc18f6503d _ZN12Double_write7init_v1ERjS0_
+ #14 0x55bc18f652c6 _ZN5dblwr2v14initEv
+ #15 0x55bc18e63683 _Z9srv_startb
+ #16 0x55bc18c2bd37 _ZL23innobase_ddse_dict_init16dict_init_mode_tjP4ListIKN2dd12Object_tableEEPS0_IK17Plugin_tablespaceE
+ #17 0x55bc1885914e _ZN2dd9bootstrap14DDSE_dict_initEP3THD16dict_init_mode_tj
+ #18 0x55bc1885a7db _ZN2dd9bootstrap18restart_dictionaryEP3THD
+ #19 0x55bc175c28a6 handle_bootstrap
+ #20 0x55bc194ff9a3 pfs_spawn_thread
+ #21 0x7fd8e0e9a979 start_thread
+ #22 0x7fd8e0f22d2b __GI___clone3
+ #23 0xffffffffffffffff <unknown>
+
+Trying to get some variables.
+Some pointers may be invalid and cause the dump to abort.
+Query (0): Connection ID (thread ID): 1
+Status: NOT_KILLED
+
+The manual page at http://dev.mysql.com/doc/mysql/en/crashing.html contains
+information that should help you find out what is causing the crash.
+2025-12-11T09:55:41.019325Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-12-11T09:55:42.978190Z 0 [ERROR] [MY-011292] [Server] Plugin mysqlx reported: 'Preparation of I/O interfaces failed, X Protocol won't be accessible'
+2025-12-11T09:55:42.978316Z 0 [ERROR] [MY-011300] [Server] Plugin mysqlx reported: 'Setup of bind-address: '*' port: 33060 failed, `bind()` failed with error: Address already in use (98). Do you already have another mysqld server running with Mysqlx ?'
+2025-12-11T09:55:42.978359Z 0 [ERROR] [MY-013597] [Server] Plugin mysqlx reported: 'Value '*' set to `Mysqlx_bind_address`, X Plugin can't bind to it. Skipping this value.'
+2025-12-11T09:55:42.978404Z 0 [ERROR] [MY-011300] [Server] Plugin mysqlx reported: 'Setup of socket: '/run/mysqld/mysqlx.sock' failed, can't create lock file /run/mysqld/mysqlx.sock.lock'
+2025-12-11T09:55:45.313763Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-12-11T09:55:45.313877Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-12-11T09:55:45.317097Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Address already in use
+2025-12-11T09:55:45.317142Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2025-12-11T09:55:45.317189Z 0 [ERROR] [MY-010119] [Server] Aborting
+2025-12-11T09:55:49.570178Z 0 [System] [MY-010910] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: Shutdown complete (mysqld 8.4.7)  Source distribution.
+2025-12-11T09:55:49.570251Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2025-12-11T09:56:17.112589Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-12-11T09:56:17.314278Z 0 [System] [MY-010116] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld (mysqld 8.4.7) starting as process 38881
+2025-12-11T09:56:17.391815Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-12-11T09:56:25.317922Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-12-11T09:56:28.873669Z 0 [ERROR] [MY-011300] [Server] Plugin mysqlx reported: 'Setup of socket: '/run/mysqld/mysqlx.sock' failed, can't create lock file /run/mysqld/mysqlx.sock.lock'
+2025-12-11T09:56:30.206903Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-12-11T09:56:30.207009Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-12-11T09:56:30.454993Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2025-12-11T09:56:30.455040Z 0 [System] [MY-010931] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: ready for connections. Version: '8.4.7'  socket: '/home/nissya/cours/a3/php/tp3/.mysql/mysql.sock'  port: 3306  Source distribution.

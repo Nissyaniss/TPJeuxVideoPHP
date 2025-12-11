@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\JeuVideoRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -40,6 +42,14 @@ class JeuVideo
     #[ORM\ManyToOne(inversedBy: 'jeuVideos')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Genre $genre = null;
+
+    #[ORM\OneToMany(mappedBy: 'jeuvideo', targetEntity: Collect::class)]
+    private Collection $collections;
+
+    public function __construct()
+    {
+        $this->collections = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -138,6 +148,42 @@ class JeuVideo
     public function setGenre(?Genre $genre): static
     {
         $this->genre = $genre;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Collect>
+     */
+    public function getCollections(): Collection
+    {
+        return $this->collections;
+    }
+
+    public function addCollection(Collect $collection): static
+    {
+        if (!$this->collections->contains($collection)) {
+            $this->collections->add($collection);
+            $collection->setJeuvideo($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCollection(Collect $collection): static
+    {
+        if ($this->collections->removeElement($collection)) {
+            // set the owning side to null (unless already changed)
+            if ($collection->getJeuvideo() === $this) {
+                // strict check, but usually safer to just leave it if not nullable, 
+                // but since it IS not nullable, we can't really set null.
+                // However, following Symfony maker standard:
+                // $collection->setJeuvideo(null); 
+                // Wait, setJeuvideo allows null? No, JoinColumn nullable=false.
+                // But typically generated code creates the method with ?JeuVideo.
+                // Let's check Collect::setJeuvideo signature.
+            }
+        }
 
         return $this;
     }

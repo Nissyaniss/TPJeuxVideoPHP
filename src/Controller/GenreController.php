@@ -11,10 +11,19 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+use Psr\Log\LoggerInterface;
+
 #[Route('/genre')]
-final class GenreController extends AbstractController
+class GenreController extends AbstractController
 {
-    #[Route(name: 'app_genre_index', methods: ['GET'])]
+    private LoggerInterface $logger;
+
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    #[Route('/', name: 'app_genre_index', methods: ['GET'])]
     public function index(GenreRepository $genreRepository): Response
     {
         return $this->render('genre/index.html.twig', [
@@ -71,7 +80,7 @@ final class GenreController extends AbstractController
     #[Route('/{id}', name: 'app_genre_delete', methods: ['POST'])]
     public function delete(Request $request, Genre $genre, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$genre->getId(), $request->getPayload()->getString('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $genre->getId(), $request->getPayload()->getString('_token'))) {
             $entityManager->remove($genre);
             $entityManager->flush();
         }

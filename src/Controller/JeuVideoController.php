@@ -14,10 +14,19 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
+use Psr\Log\LoggerInterface;
+
 #[Route('/jeu/video')]
 final class JeuVideoController extends AbstractController
 {
-    #[Route(name: 'app_jeu_video_index', methods: ['GET'])]
+    private LoggerInterface $logger;
+
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    #[Route('/', name: 'app_jeu_video_index', methods: ['GET'])]
     public function index(JeuVideoRepository $jeuVideoRepository): Response
     {
         return $this->render('jeu_video/index.html.twig', [

@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vue Globale des Collections
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<h1 class="mb-4">Vue Globale des Collections ({{ collects|length }})</h1>
+
+		<div class="card">
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-hover align-middle">
+						<thead class="table-light">
+							<tr>
+								<th style="width: 20%;">Utilisateur</th>
+								<th style="width: 50%;">Jeu</th>
+								<th style="width: 20%;">Statut</th>
+								<th style="width: 10%;">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for collect in collects %}
+								<tr>
+									<td>
+										<div class="d-flex align-items-center">
+											{% if collect.utilisateur.imageProfil %}
+												<img src="{{ collect.utilisateur.imageProfil }}" alt="{{ collect.utilisateur.pseudo }}" class="rounded-circle me-2" width="30" height="30">
+											{% else %}
+												<div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center text-white me-2" style="width: 30px; height: 30px;">
+													{{ collect.utilisateur.prenom|first }}{{ collect.utilisateur.nom|first }}
+												</div>
+											{% endif %}
+											<a href="{{ path('app_utilisateur_show', {'id': collect.utilisateur.id}) }}" class="text-decoration-none">
+												{{ collect.utilisateur.pseudo }}
+											</a>
+										</div>
+									</td>
+									<td>
+										<a href="{{ path('app_jeu_video_show', {'id': collect.jeuvideo.id}) }}" class="text-decoration-none text-dark">
+											<div class="d-flex align-items-center">
+												{% if collect.jeuvideo.imageUrl %}
+													<img src="{{ collect.jeuvideo.imageUrl }}" alt="{{ collect.jeuvideo.titre }}" class="rounded me-2 shadow-sm" width="50" height="50" style="object-fit: cover;">
+												{% else %}
+													<div class="rounded bg-light d-flex align-items-center justify-content-center me-2 text-muted shadow-sm" style="width: 50px; height: 50px;">
+														<i class="bi bi-controller"></i>
+													</div>
+												{% endif %}
+												<span class="fw-bold">{{ collect.jeuvideo.titre }}</span>
+											</div>
+										</a>
+									</td>
+									<td>
+										<span class="badge
+												                                        {% if collect.statut.name == 'POSSEDE' %}bg-success
+												                                        {% elseif collect.statut.name == 'SOUHAITE' %}bg-info
+												                                        {% elseif collect.statut.name == 'EN_COURS' %}bg-primary
+												                                        {% elseif collect.statut.name == 'TERMINE' %}bg-warning text-dark
+												                                        {% elseif collect.statut.name == 'ABANDONNE' %}bg-danger
+												                                        {% else %}bg-secondary{% endif %}">
+											{{ collect.statut.label }}
+										</span>
+									</td>
+									<td>
+										<a href="{{ path('app_collect_edit', {'id': collect.id}) }}" class="btn btn-sm btn-outline-primary" title="Modifier">
+											<i class="bi bi-pencil"></i>
+										</a>
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="4" class="text-center py-4">Aucune collection trouvée.</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

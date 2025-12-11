@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier la collection
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<h1>Modifier la collection</h1>
+
+		{{ include('collect/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+		<a href="{{ path('app_utilisateur_show', {'id': collect.utilisateur.id}) }}" class="btn btn-link mt-3">Retour à la collection</a>
+	</div>
+{% endblock %}
