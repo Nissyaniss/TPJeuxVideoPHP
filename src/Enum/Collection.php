@@ -15,7 +15,6 @@ enum Collection: int
 
     public function getLabel(): string
     {
-        // Retourne une valeur « human-readable »
         return match ($this) {
             self::POSSEDE => 'Possédé',
             self::SOUHAITE => 'Souhaité',

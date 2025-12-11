@@ -140,16 +140,8 @@ class Utilisateur
     public function removeCollection(Collect $collection): static
     {
         if ($this->collections->removeElement($collection)) {
-            // set the owning side to null (unless already changed)
             if ($collection->getUtilisateur() === $this) {
-                // Since nullable=false on Collect::utilisateur, we might technically get an error if we set it to null without reassigning
-                // But standard Doctrine behavior is usually to set to null.
-                // However, given strict typing, we might not be able to set it to null if the setter enforces it.
-                // I'll leave as standard pattern, but be aware.
-                // Actually Collect::setUtilisateur takes ?Utilisateur so it is fine.
-                // Wait, JoinColumn(nullable: false).
-                // Usually we just don't orphan removal unless verified.
-                // I will include standard generated code.
+                $collection->setUtilisateur(null);
             }
         }
 

@@ -79,3 +79,15 @@ information that should help you find out what is causing the crash.
 2025-12-11T09:56:30.207009Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
 2025-12-11T09:56:30.454993Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
 2025-12-11T09:56:30.455040Z 0 [System] [MY-010931] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: ready for connections. Version: '8.4.7'  socket: '/home/nissya/cours/a3/php/tp3/.mysql/mysql.sock'  port: 3306  Source distribution.
+2025-12-11T15:43:04.526430Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.4.7).
+2025-12-11T15:43:07.904779Z 0 [System] [MY-010910] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: Shutdown complete (mysqld 8.4.7)  Source distribution.
+2025-12-11T15:43:07.904806Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2025-12-11T15:48:24.193843Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-12-11T15:48:24.421146Z 0 [System] [MY-010116] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld (mysqld 8.4.7) starting as process 6436
+2025-12-11T15:48:24.582707Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-12-11T15:48:34.525513Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-12-11T15:48:35.426619Z 0 [ERROR] [MY-011300] [Server] Plugin mysqlx reported: 'Setup of socket: '/run/mysqld/mysqlx.sock' failed, can't create lock file /run/mysqld/mysqlx.sock.lock'
+2025-12-11T15:48:36.660511Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-12-11T15:48:36.660558Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-12-11T15:48:36.959602Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2025-12-11T15:48:36.959847Z 0 [System] [MY-010931] [Server] /nix/store/x6h10xvis4b5b688jydh3argxl3fv2m5-mysql-8.4.7/bin/mysqld: ready for connections. Version: '8.4.7'  socket: '/home/nissya/cours/a3/php/tp3/.mysql/mysql.sock'  port: 3306  Source distribution.

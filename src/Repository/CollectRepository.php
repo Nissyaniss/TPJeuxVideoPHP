@@ -6,9 +6,6 @@ use App\Entity\Collect;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-/**
- * @extends ServiceEntityRepository<Collect>
- */
 class CollectRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)

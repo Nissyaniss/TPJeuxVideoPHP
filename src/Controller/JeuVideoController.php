@@ -55,11 +55,11 @@ final class JeuVideoController extends AbstractController
                         $this->getParameter('images_directory'),
                         $newFilename
                     );
+                    $jeuVideo->setImageUrl('uploads/images/' . $newFilename);
                 } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
+                    $this->logger->error('Erreur lors du téléchargement de l\'image (New) : ' . $e->getMessage());
+                    $this->addFlash('danger', 'Une erreur est survenue lors du téléchargement de l\'image.');
                 }
-
-                $jeuVideo->setImageUrl('uploads/images/' . $newFilename);
             }
 
             $entityManager->persist($jeuVideo);
@@ -102,11 +102,11 @@ final class JeuVideoController extends AbstractController
                         $this->getParameter('images_directory'),
                         $newFilename
                     );
+                    $jeuVideo->setImageUrl('uploads/images/' . $newFilename);
                 } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
+                    $this->logger->error('Erreur lors du téléchargement de l\'image (New) : ' . $e->getMessage());
+                    $this->addFlash('danger', 'Une erreur est survenue lors du téléchargement de l\'image.');
                 }
-
-                $jeuVideo->setImageUrl('uploads/images/' . $newFilename);
             }
 
             $entityManager->flush();

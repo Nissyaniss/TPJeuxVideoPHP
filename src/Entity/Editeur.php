@@ -143,7 +143,6 @@ class Editeur
     public function removeJeuVideo(JeuVideo $jeuVideo): static
     {
         if ($this->jeuVideos->removeElement($jeuVideo)) {
-            // set the owning side to null (unless already changed)
             if ($jeuVideo->getEditeur() === $this) {
                 $jeuVideo->setEditeur(null);
             }

@@ -173,7 +173,6 @@ class JeuVideo
     public function removeCollection(Collect $collection): static
     {
         if ($this->collections->removeElement($collection)) {
-            // set the owning side to null (unless already changed)
             if ($collection->getJeuvideo() === $this) {
                 // strict check, but usually safer to just leave it if not nullable, 
                 // but since it IS not nullable, we can't really set null.
